@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(1, 29, 1);
+    width: 100vw;
+    height: 100vh;
+}
+.done .selected {
+opacity: 50%;
+pointer-events: all;
+}
+.innocent {
+    visibility: hidden;
+    pointer-events: none;
+} 
+.innocentfs {
+    visibility: hidden;
+    pointer-events: none;
+}
+.done li, .done div{
+    pointer-events: none;
+}
+button {
+    width: 5rem;
+}
+.game >div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ul{
+    margin: 3rem;
+    list-style-type: none;
+}
+.done .innocent, .innocent {
+    visibility: hidden;
+}
+.done .guessed{
+    pointer-events: none;
+    background-color: brown;
+}
+.guessed li{
+    pointer-events: none;
+}
+
+.submit{
+    display: none;
+}
+.open.submit{
+    display:flex;
+    text-align: center;
+    height: 3rem;
+}
+
+ol{
+    text-align: center;
+    margin-top: 3rem;
+    background-color: antiquewhite;
+}
+
+.game{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+}
+.players img {
+    height: 5rem;
+}
+.wepons img {
+    height: 3rem;
+}
+.players li, wepons li{
+    display: flex;
+}
+.wepons li{
+    background-color: antiquewhite;
+    border: 1px solid black;
+}
+.head, #respond{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* .players{
+    background-color: rgb(1, 29, 1);
+    padding: 1rem;
+} */
+
+#ColonelMoutarde {
+    background-color: yellow;
+}
+#DocteurOlive {
+    background-color: green;
+}
+#MadameLeblanc {
+    background-color: antiquewhite;
+}
+#MadamePervenche {
+    background-color: aqua;
+}
+#MademoiselleRose {
+    background-color: palevioletred;    
+}
+#ProfesseurViolet{
+    background-color: violet;
+}
+
+.rooms {
+    display: flex;
+}
+div h2{
+    padding-bottom: 4rem;
+}
+.rooms div{
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+}
+.room {
+    size: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    align-content: center;
+    /* height: 5rem; */
+}
+.rooms> div:first-child{
+    width: 10.17rem;
+}
+#Kitchen{
+    height: 12.99rem;
+    width: 10.17rem;
+}
+#Diningroom{
+    height: 12.06rem;
+    width: 10.17rem;
+}
+#Livingroom{
+    width: 10.17rem;
+    height: 9.42rem;
+}
+.rooms> div:nth-child(2){
+    width: 14.25rem;
+    background-color: black;
+}
+#Lounge{
+    width: 14.25rem;
+    height: 7.92rem;
+    margin-bottom: 19.68rem;
+}
+#Hall{
+    width: 14.25rem;
+    height: 6.87rem;
+}
+.rooms>div:nth-child(3){
+    width: 10.17rem;
+}
+#WinterGarden{
+    width: 10.17rem;
+    height: 9.96rem;
+}
+#Billiardroom{
+    width: 10.17rem;
+    height: 7.98rem;
+}
+#Library{
+    width: 10.17rem;
+    height: 7.77rem;
+}
+#Officeroom{
+    width: 10.17rem;
+    height: 8.88rem;
+}

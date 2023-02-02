@@ -2,12 +2,68 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
+}
+.head{
+    visibility: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#affiche{
+    background-color: antiquewhite;
+}
+h1, h2{
+    color: antiquewhite;
 }
 body{
-    background-color: rgb(1, 29, 1);
+    background-color: rgb(0, 0, 0);
     width: 100vw;
     height: 100vh;
 }
+#menu{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: none;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#title{
+    display: flex;
+    background-color: black;
+    color: antiquewhite;
+}
+.game{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+.game >div:first-child {
+    display: flex;
+    align-items: center;
+}
+.game> div:last-child{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 2vw;
+}
+.game> div:last-child h2{
+    background-color: antiquewhite;
+    padding: 1vw 2vw;
+    text-align: center;
+    color: black;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+
 .done .selected {
 opacity: 50%;
 pointer-events: all;
@@ -20,20 +76,8 @@ pointer-events: all;
     visibility: hidden;
     pointer-events: none;
 }
-.done li, .done div{
+.done div{
     pointer-events: none;
-}
-button {
-    width: 5rem;
-}
-.game >div:first-child {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-ul{
-    margin: 3rem;
-    list-style-type: none;
 }
 .done .innocent, .innocent {
     visibility: hidden;
@@ -46,51 +90,40 @@ ul{
     pointer-events: none;
 }
 
+
+button {
+    width: 7vw;
+    height: 4vw;
+}
 .submit{
-    display: none;
+    visibility: hidden;
+    pointer-events: none;
 }
 .open.submit{
-    display:flex;
-    text-align: center;
-    height: 3rem;
+    visibility: visible;
+    pointer-events:all;
 }
 
-ol{
-    text-align: center;
-    margin-top: 3rem;
-    background-color: antiquewhite;
-}
-
-.game{
+.wepons{
     display: flex;
-    justify-content: center;
-    width: 100%;
-    
-}
-.players img {
-    height: 5rem;
+    flex-wrap: wrap;
+    margin-left: 1vw;
 }
 .wepons img {
-    height: 3rem;
+    height: 11vw;
+}
+
+
+.players{
+    display: flex;
+    flex-wrap: wrap;
+}
+.players img {
+    height: 13vw;
 }
 .players li, wepons li{
     display: flex;
 }
-.wepons li{
-    background-color: antiquewhite;
-    border: 1px solid black;
-}
-.head, #respond{
-    display: flex;
-    justify-content: space-between;
-}
-
-
-/* .players{
-    background-color: rgb(1, 29, 1);
-    padding: 1rem;
-} */
-
 #ColonelMoutarde {
     background-color: yellow;
 }
@@ -110,69 +143,69 @@ ol{
     background-color: violet;
 }
 
+
+
 .rooms {
     display: flex;
-}
-div h2{
-    padding-bottom: 4rem;
 }
 .rooms div{
     display: flex;
     flex-direction: column;
-    /* width: 100%; */
 }
 .room {
     size: auto;
     background-size: contain;
     background-repeat: no-repeat;
     text-align: center;
-    align-content: center;
-    /* height: 5rem; */
 }
 .rooms> div:first-child{
-    width: 10.17rem;
+    width:12.44vw;
 }
 #Kitchen{
-    height: 12.99rem;
-    width: 10.17rem;
+    height: 15.68vw;
+    width: 12.44vw;
 }
 #Diningroom{
-    height: 12.06rem;
-    width: 10.17rem;
+    height: 14.8vw;
+    width: 12.44vw;
 }
 #Livingroom{
-    width: 10.17rem;
-    height: 9.42rem;
+    width:12.44vw;
+    height: 11.72vw;
 }
 .rooms> div:nth-child(2){
-    width: 14.25rem;
+    width: 17.52vw;
     background-color: black;
 }
 #Lounge{
-    width: 14.25rem;
-    height: 7.92rem;
-    margin-bottom: 19.68rem;
+    width: 17.52vw;
+    height: 9.84vw;
+    margin-bottom: 23.92vw;
 }
 #Hall{
-    width: 14.25rem;
-    height: 6.87rem;
+    width: 17.52vw;
+    height: 8.44vw;
 }
 .rooms>div:nth-child(3){
-    width: 10.17rem;
+    width:12.44vw;
 }
 #WinterGarden{
-    width: 10.17rem;
-    height: 9.96rem;
+    width:12.44w;
+    height: 12.28vw;
 }
 #Billiardroom{
-    width: 10.17rem;
-    height: 7.98rem;
+    width:12.44vw;
+    height: 9.84vw;
 }
 #Library{
-    width: 10.17rem;
-    height: 7.77rem;
+    width:12.44vw;
+    height:9.6vw;
 }
 #Officeroom{
-    width: 10.17rem;
-    height: 8.88rem;
+    width:12.44vw;
+    height: 10.88vw;
 }
+.room{
+    border: 1px solid black;
+}
+                                                            

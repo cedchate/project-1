@@ -255,6 +255,14 @@ function submitInUl(game){
         document.querySelectorAll('.innocent').forEach((el)=> el.classList.remove('innocent')); 
         document.querySelectorAll('.innocentfs').forEach((el)=> el.classList.remove('innocentfs')); 
         submitBtn.classList.remove('open');
+        let i=0
+        game.selection.forEach((guess)=>  {
+            if(guess===game.randomChoice[i]){
+                console.log(game.selection[i].getId());
+                document.querySelector(`#${game.selection[i].getId()}`).classList.add('true');
+            }
+            i++;
+        })
         console.log(game.selection);
         if (game.isItTrue()){
             game.nbAttemps= "win";

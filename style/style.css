@@ -69,18 +69,21 @@ opacity: 50%;
 pointer-events: all;
 }
 .innocent {
-    visibility: hidden;
-    pointer-events: none;
+    /* visibility: hidden; */
+    
 } 
 .innocentfs {
-    visibility: hidden;
+    /* visibility: hidden; */
+    filter: grayscale(150%);
     pointer-events: none;
 }
 .done div{
     pointer-events: none;
 }
 .done .innocent, .innocent {
-    visibility: hidden;
+    /* visibility: hidden; */
+    filter: grayscale(150%);
+    pointer-events: none;
 }
 .done .guessed{
     pointer-events: none;
@@ -88,6 +91,9 @@ pointer-events: all;
 }
 .guessed li{
     pointer-events: none;
+}
+.true{
+    filter: contrast(200%);
 }
 
 

@@ -7,11 +7,28 @@
 .head{
     visibility: hidden;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    margin: 0 3vw;
 }
 #affiche{
     background-color: antiquewhite;
+}
+
+p, .counter{
+    background-color: antiquewhite;
+    text-align: center;
+    border: 1px solid black;
+}
+.divcount{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.gomenu{
+    /* visibility: visible; */
+    width: 7vw;
+    height: 3vw;
 }
 h1, h2{
     color: antiquewhite;
@@ -68,12 +85,7 @@ body{
 opacity: 50%;
 pointer-events: all;
 }
-.innocent {
-    /* visibility: hidden; */
-    
-} 
 .innocentfs {
-    /* visibility: hidden; */
     filter: grayscale(150%);
     pointer-events: none;
 }
@@ -81,7 +93,6 @@ pointer-events: all;
     pointer-events: none;
 }
 .done .innocent, .innocent {
-    /* visibility: hidden; */
     filter: grayscale(150%);
     pointer-events: none;
 }

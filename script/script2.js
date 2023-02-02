@@ -1,9 +1,20 @@
 document.querySelector('#menu').style.backgroundImage= 'url("./img/boite.jpeg")';
 const startBtn= document.querySelector('#start');
+let score;
+goMenu= document.createElement('button');
+    goMenu.classList.add('gomenu');
+    goMenu.textContent= 'Menu';
+    document.querySelector('.head').append(goMenu);
+    goMenu.addEventListener('click', ()=> {
+        document.querySelector('#menu').style.display= "flex";
+        document.querySelector('.game').remove();
+        document.querySelector('.head').style.visibility= 'hidden';
+        document.querySelector('#affiche').textContent= '';
+});
 startBtn.addEventListener('click', ()=> {
     createGame();
-    document.querySelector('#menu').remove();
-    document.querySelector('h1').style.visibility= 'visible';
+    document.querySelector('#menu').style.display= "none";
+    document.querySelector('.head').style.visibility= 'visible';
 });
 
 function createGame(){
@@ -23,7 +34,6 @@ function makeUlInSection (){
     const divPlayers= document.createElement('div');
     divPlay.classList.add('container');
     const h2Players= document.createElement('h2');
-    // divPlay.append(ulPlayers);
     divPlay.append(h2Players);
     divPlay.append(divPlayers);
     divPlayers.classList.add('players');
@@ -51,7 +61,6 @@ function makeUlInSection (){
     h2Wepons.textContent= "WEAPONS :";
     divWep.append(divWepons);
 
-    // const divUp= document.createElement('div');
     const divGame= document.createElement('div');
     divGame.classList.add('up');
     divGame.append(divWep,divPlay,divRoomElement);
@@ -59,13 +68,18 @@ function makeUlInSection (){
     const submitBtn= document.createElement('button');
     submitBtn.classList.add('submit');
     submitBtn.textContent= "Submit";
+    const resultElem= document.createElement('p');
+    resultElem.classList.add('counter');
+    resultElem.textContent= 'Score:';
     const submitElem= document.createElement('div');
     const counterElement= document.createElement('h2');
     counterElement.classList.add('counter');
     counterElement.textContent= 0;
     counterdiv= document.createElement('div');
+    counterdiv.classList.add('divcount');
     submtDiv= document.createElement('div');
-    submtDiv.classList.add('andReplay')
+    submtDiv.classList.add('andReplay');
+    counterdiv.append(resultElem);
     counterdiv.append(counterElement);
     submtDiv.append(submitBtn)
     submitElem.append(counterdiv);
@@ -250,10 +264,6 @@ function playersInUL(game){
 function submitInUl(game){
     const submitBtn= document.querySelector('.submit');
     submitBtn.addEventListener('click', ()=> {        
-        document.querySelectorAll('.selected').forEach((el)=> el.classList.remove('selected'));
-        document.querySelectorAll('.done').forEach((el)=> el.classList.remove('done'));
-        document.querySelectorAll('.innocent').forEach((el)=> el.classList.remove('innocent')); 
-        document.querySelectorAll('.innocentfs').forEach((el)=> el.classList.remove('innocentfs')); 
         submitBtn.classList.remove('open');
         let i=0
         game.selection.forEach((guess)=>  {
@@ -265,24 +275,36 @@ function submitInUl(game){
         })
         console.log(game.selection);
         if (game.isItTrue()){
-            game.nbAttemps= "win";
+            game.nbAttemps++;
+            document.querySelector('.counter').textContent= game.nbAttemps;
             document.querySelector('#affiche').textContent= `Yes it was ${game.selection[0].name} with the ${game.selection[1].name} in the ${game.selection[2].name}!`;
-            document.querySelector('#affiche').style.visibility= 'visible';
             const replayBtn = document.createElement('button');
             replayBtn.textContent= 'Replay';
             document.querySelector('.andReplay').append(replayBtn);
             replayBtn.addEventListener('click', ()=> {
                 console.log('again');
                 document.querySelector('.game').remove();
+                if(!document.querySelector('.replay')){
+                    document.querySelector('#game').classList.add('replay');
+                    document.querySelector('h1').textContent= "Cluedo's Best-Score: "+game.nbAttemps;
+                    score= game.nbAttemps;
+                }else{
+                    if(score>game.nbAttemps){
+                        document.querySelector('h1').textContent= "Cluedo's Best-Score: "+game.nbAttemps;
+                    }
+                }
                 createGame();
             });
         }else {
+            document.querySelectorAll('.selected').forEach((el)=> el.classList.remove('selected'));
+            document.querySelectorAll('.done').forEach((el)=> el.classList.remove('done'));
+            document.querySelectorAll('.innocent').forEach((el)=> el.classList.remove('innocent')); 
+            document.querySelectorAll('.innocentfs').forEach((el)=> el.classList.remove('innocentfs')); 
             game.nbAttemps++;
-            setTimeout(()=>document.querySelector('#affiche').style.visibility= 'hidden', 10000);
             document.querySelector('#affiche').textContent= `It is not ${game.selection[0].name} with the ${game.selection[1].name} in the ${game.selection[2].name}...`;
-            document.querySelector('#affiche').style.visibility= 'visible';
+            document.querySelector('.counter').textContent= game.nbAttemps;
         }
-        document.querySelector('.counter').textContent= game.nbAttemps;
+        
         
         game.selection=[' ', ' ', ' '];
     });

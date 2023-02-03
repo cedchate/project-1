@@ -8,6 +8,7 @@ Little game not funny at all using HTML CSS and JS for project 1 of Ironhack
 - counter number of attemps
 ## What's next
 - add some players
-- get nices ideas
+- css could be better(background)
+- add soundsystem
 
 link to the [game](https://cedchate.github.io/project-1/)
